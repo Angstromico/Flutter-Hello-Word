@@ -10,6 +10,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CounterScreen();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Hello World',
+      theme: ThemeData( useMaterial3: true, colorSchemeSeed: Colors.blue),
+      home: CounterScreen(),
+    );
   }
 }
