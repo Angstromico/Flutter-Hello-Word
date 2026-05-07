@@ -14,7 +14,7 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Counter Functions Screen'), actions: [IconButton(onPressed: () => setState(() => clicksCounter = 0), icon: Icon(Icons.refresh))]),
+      appBar: AppBar(title: Text('Counter Functions Screen'), actions: [CounterButton(icon: Icons.refresh, onPressed: () => setState(() => clicksCounter = 0))]),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -33,12 +33,11 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
+          CounterButton(icon: Icons.refresh, onPressed: () => setState(() => clicksCounter = 0)),
+          SizedBox(height: 10),
           CounterButton(icon: Icons.add, onPressed: () => setState(() => clicksCounter++)),
           SizedBox(height: 10),
-          FloatingActionButton(
-            onPressed: () => setState(() { if(clicksCounter > 0) clicksCounter--; }),
-            child: Icon(Icons.remove),
-          ),
+          CounterButton(icon: Icons.remove, onPressed: () => setState(() { if(clicksCounter > 0) clicksCounter--; })),
         ],
       ),
     );
