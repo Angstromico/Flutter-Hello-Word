@@ -16,7 +16,8 @@ class _CounterScreenState extends State<CounterScreen> {
       appBar: AppBar(title: Text('Flutter Counter Screen')),
       body: Center(child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [Text("$clicksCounter", style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold)), Text("Clicks", style: TextStyle(fontSize: 30, color: Colors.grey))],
+        children: [Text("$clicksCounter", style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold)), Text(
+              clicksCounter == 1 ? "Click" : "Clicks", style: TextStyle(fontSize: 30, color: Colors.grey))],
       )),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
