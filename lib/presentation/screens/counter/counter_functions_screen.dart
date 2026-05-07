@@ -14,7 +14,17 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Counter Functions Screen'), actions: [CounterButton(icon: Icons.refresh, onPressed: () => setState(() => clicksCounter = 0))]),
+      appBar: AppBar(
+        title: Text('Counter Functions Screen'),
+        actions: [
+          CounterButton(
+            icon: Icons.refresh,
+            onPressed: () => setState(() => clicksCounter = 0),
+            mini: true,
+            backgroundColor: Colors.transparent,
+          ),
+        ],
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
