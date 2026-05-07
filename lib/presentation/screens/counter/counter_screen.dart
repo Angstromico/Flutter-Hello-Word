@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/presentation/widgets/counter_button.dart';
 
 class CounterScreen extends StatefulWidget {
   const CounterScreen({super.key});
@@ -19,14 +20,7 @@ class _CounterScreenState extends State<CounterScreen> {
         children: [Text("$clicksCounter", style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold)), Text(
               clicksCounter == 1 ? "Click" : "Clicks", style: TextStyle(fontSize: 30, color: Colors.grey))],
       )),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            clicksCounter++;
-          });
-        },
-        child: Icon(Icons.add),
-      ),
+      floatingActionButton: CounterButton(icon: Icons.add, onPressed: () => setState(() => clicksCounter++)),
     );
   }
 }

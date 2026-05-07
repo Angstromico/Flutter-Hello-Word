@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/presentation/widgets/counter_button.dart';
 
 class CounterFunctionsScreen extends StatefulWidget {
   const CounterFunctionsScreen({super.key});
@@ -32,16 +33,9 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          FloatingActionButton(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            onPressed: () => setState(() => clicksCounter++),
-            child: Icon(Icons.add),
-          ),
+          CounterButton(icon: Icons.add, onPressed: () => setState(() => clicksCounter++)),
           SizedBox(height: 10),
           FloatingActionButton(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
             onPressed: () => setState(() { if(clicksCounter > 0) clicksCounter--; }),
             child: Icon(Icons.remove),
           ),
